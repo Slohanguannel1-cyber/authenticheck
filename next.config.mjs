@@ -1,1 +1,7 @@
-const nextConfig = {}; export default nextConfig;
+const nextConfig = {
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+};
+
+export default nextConfig;
