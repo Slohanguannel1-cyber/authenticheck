@@ -4,11 +4,18 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Nav from "@/components/Nav";
 
+type AnalysisData = {
+  score: number;
+  confidence: "high" | "medium" | "low";
+  summary: string;
+  flags: string[];
+};
+
 export default function Analyze() {
   const [files, setFiles] = useState<File[]>([]);
   const [brand, setBrand] = useState("");
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState(false);
+  const [result, setResult] = useState<AnalysisData | null>(null);
   const [analysisStep, setAnalysisStep] = useState(0);
 
   // le reste de ton code continue ici...

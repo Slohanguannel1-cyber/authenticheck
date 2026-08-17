@@ -55,7 +55,7 @@ export default function Pricing() {
         <div className="mt-12 grid gap-5 md:grid-cols-3">
           {plans.map((p, i) => (
             <div
-              key={p[0]}
+              key={String(p[0])}
               className={`glass rounded-3xl p-7 ${
                 i === 1
                   ? "border-indigo-400/40 shadow-glow"
@@ -82,7 +82,7 @@ export default function Pricing() {
               </p>
 
               <ul className="mt-7 space-y-3 text-sm text-white/65">
-                {p[3].map((x) => (
+                {(Array.isArray(p[3]) ? p[3] : [p[3]]).map((x) => (
                   <li key={x}>✓ {x}</li>
                 ))}
               </ul>
